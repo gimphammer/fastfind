@@ -18,7 +18,7 @@ You can use command "ffse-help" to get some help.
 
 For historical reason, there are something named with "ffse" which means "fast-find-symbol extension", and now it's the 3rd version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script, don't be suprised when see those name.......
 
-
+<br />
 
 ## 2. [Tool Init]
 
@@ -46,7 +46,7 @@ ffse-init
 
 
 
-
+<br />
 
 ## 3. [Command usage]
 
@@ -81,7 +81,7 @@ Hint like this:
 
 Enjoy it!~~
 
-
+<br />
 
 ## 4. [Screenshot]
 
@@ -92,8 +92,6 @@ Enjoy it!~~
 ![image-20240603174233244](readme.pic/image-20240603174233244.png)
 
 Have a fun!~~
-
-<br />
 
 <br />
 
@@ -128,13 +126,13 @@ the specific shotcuts depend on the platform you used or the configuration set b
 
 you can just copy these JSON fregments to the user setting.json of vs-code
 
-
+<br />
 
 ## 6. [What's you need to know]
 
 Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it....
 
-
+<br />
 
 ## 7. [Something about  Design] -- TL;DR
 
