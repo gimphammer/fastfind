@@ -68,7 +68,7 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 
 ![image-20240603172508178](readme.pic/image-20240603172508178.png)
 
-![image-20240603172744393](readme.pic/image-20240603172744393.png)
+![image-20240603174233244](readme.pic/image-20240603174233244.png)
 
 Have a fun!~~
 
