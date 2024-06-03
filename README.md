@@ -126,6 +126,8 @@ the specific shotcuts depend on the platform you used or the configuration set b
     "terminal.integrated.wordSeparators": "()[]{} ',\"`─‘’|<>.:-;/\\&*-~=",
 ```
 
+you can just copy these JSON fregments to the user setting.json of vs-code
+
 
 
 ## 6. [What's you need to know]
