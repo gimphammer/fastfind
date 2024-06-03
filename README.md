@@ -10,7 +10,7 @@ It works under:
 
 Maybe it can fit other shell-env, but not test is performed
 
-The idea of this tools comes from the terrible experience in using vs-code on WebRTC source code. There is no symbol colorful highlight, and no category in search result on vs-code. There always so many results when use search, so that you need to take so many time to find the focus in the search result.  And also on Mac, the IntelliSense and C++ extension does not work well as you expect, the performance on Mac can not be endured. 
+The idea of this tools comes from the terrible experience in using vs-code on WebRTC source code. There is no symbol colorful highlight, and no category in search result in vs-code. There are always so many results when search, so that you need to take too much time to find the focus you really care about.  And also on Mac, the IntelliSense and C++ extension does not work well as you expect, the performance on Mac can not be endured. 
 
 This tool is designed to show respect to the visual assist which is the powerful extension of visual studio for C++ on Windows.
 
