@@ -69,6 +69,8 @@ The commands listed above: some are alias commands and some are original defined
 
 ## [Used in VS-Code]
 
+vs-code has also integrated the shell-env, so you can run the fastfind in that env. But don't forget to choose the right shell-env which fastfind fits.
+
 vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will quick jump to the line where the target locates.
 
 Hint like this:
