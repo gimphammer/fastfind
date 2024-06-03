@@ -14,7 +14,9 @@ The idea of this tools comes from the terrible experience in using vs-code on We
 
 This tool is designed to show respect to the visual assist which is the powerful extension of visual studio for C++ on Windows.
 
-fastfind use all-src.list to identify the files you need. Because not all file is needed, you can use command "ffse-help" to get some help. For historical reason, fastfind used the name of "ffse" which means "fast-find-symbol extension", and now it's the third version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script.......
+You can use command "ffse-help" to get some help. 
+
+For historical reason, there are something named with "ffse" which means "fast-find-symbol extension", and now it's the 3rd version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script, don't be suprised when see those name.......
 
 
 
