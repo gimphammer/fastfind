@@ -16,7 +16,7 @@ This tool is designed to show respect to the visual assist which is the powerful
 
 You can use command "ffse-help" to get some help. 
 
-For historical reason, there are something named with "ffse" which means "fast-find-symbol extension", and now it's the 3rd version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script, don't be suprised when see those name.......
+For historical reason, there are something named with "ffse" which means "fast-find-symbol extension", and now it's the 3rd version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script, don't be suprised when you see those names.......
 
 <br />
 
