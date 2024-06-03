@@ -50,6 +50,8 @@ ffse-init
 
 ## [Command usage]
 
+### Basic Command
+
 - fc [symbol]  -- to find where the symbol is used, or the function is called
 
 - fs [symbol] -- find all symbol in code base
@@ -67,7 +69,7 @@ The commands listed above: some are alias commands and some are original defined
 
 
 
-## [Used in VS-Code]
+### Used in VS-Code
 
 vs-code has also integrated the shell-env, so you can run the fastfind in that env. But don't forget to choose the right shell-env which fastfind fits.
 
@@ -75,9 +77,11 @@ vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will 
 
 Hint like this:
 
-![image-20240603180600436](readme.pic/image-20240603180600436.png)
+![image-20240603181122396](readme.pic/image-20240603181122396.png)
 
 Enjoy it!~~
+
+
 
 ## [What's you need to know]
 
@@ -94,6 +98,39 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 ![image-20240603174233244](readme.pic/image-20240603174233244.png)
 
 Have a fun!~~
+
+
+
+## [More help you work more fluent]
+
+### Shotcut
+
+you can ignore the shotcuts listed here, but if you are famillar with shotcut, you can work more fluent. 
+
+| vs-code command ID                       |
+| ---------------------------------------- |
+| copyRelativeFilePath                     |
+| workbench.action.terminal.toggleTerminal |
+| (more to be added.....)                  |
+
+the specific shotcuts depend on the platform you used or the configuration set by you
+
+
+
+### VS-Code Setting(User)
+
+```json
+    "terminal.integrated.commandsToSkipShell": [
+      "workbench.action.quickSwitchWindow",
+      "workbench.action.closeSidebar",
+      "workbench.action.quickOpenView",
+      "workbench.action.gotoSymbol",
+      "workbench.action.showAllSymbols"
+    ],
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.wordSeparators": "()[]{} ',\"`─‘’|<>.:-;/\\&*-~=",
+```
 
 
 
