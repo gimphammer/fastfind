@@ -99,7 +99,7 @@ Have a fun!~~
 
 ### 5.1 Shortcuts
 
-you can ignore the shortcuts listed here, but if you are famillar with shortcuts, you can work more fluent. 
+you can ignore the shortcuts listed here, but if you are familiar with shortcuts, you can work more fluently. 
 
 | vs-code command ID                       |
 | ---------------------------------------- |
