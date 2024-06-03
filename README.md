@@ -1,5 +1,5 @@
 # fastfind
-## [Background]
+## 1. [Background]
 
 It's a tool designed for C++ symbol find based on shell. 
 
@@ -20,7 +20,7 @@ For historical reason, there are something named with "ffse" which means "fast-f
 
 
 
-## [Tool Init]
+## 2. [Tool Init]
 
 To init the tool, just:
 
@@ -48,9 +48,9 @@ ffse-init
 
 
 
-## [Command usage]
+## 3. [Command usage]
 
-### Basic Command
+### 3.1 Basic Command
 
 - fc [symbol]  -- to find where the symbol is used, or the function is called
 
@@ -69,7 +69,7 @@ The commands listed above: some are alias commands and some are original defined
 
 
 
-### Used in VS-Code
+### 3.2 Used in VS-Code
 
 vs-code has also integrated the shell-env, so you can run the fastfind in that env. But don't forget to choose the right shell-env which fastfind fits.
 
@@ -83,13 +83,7 @@ Enjoy it!~~
 
 
 
-## [What's you need to know]
-
-Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it....
-
-
-
-## [Screenshot]
+## 4. [Screenshot]
 
 ![image-20240603172210739](readme.pic/image-20240603172210739.png)
 
@@ -101,9 +95,9 @@ Have a fun!~~
 
 
 
-## [More help you work more fluent]
+## 5. [More help you work more fluent]
 
-### Shotcut
+### 5.1 Shotcut
 
 you can ignore the shotcuts listed here, but if you are famillar with shotcut, you can work more fluent. 
 
@@ -117,7 +111,7 @@ the specific shotcuts depend on the platform you used or the configuration set b
 
 
 
-### VS-Code Setting(User)
+### 5.2 VS-Code Setting(User)
 
 ```json
     "terminal.integrated.commandsToSkipShell": [
@@ -134,20 +128,24 @@ the specific shotcuts depend on the platform you used or the configuration set b
 
 
 
+## 6. [What's you need to know]
+
+Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it....
 
 
-## [Something about  Design] -- TL;DR
+
+## 7. [Something about  Design] -- TL;DR
 
 There are several list used by the fastfind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
 
-### About list:
+### 7.1 About list:
 
 - **all-src.list** -- all source files of C++ code used to find the symbol you want. It includes all the *.h file and *.cc. But the source file in the directory of "third_party" is not included, because that's not the core source of webrtc. Anyway, you can modify the shell-script to let ffse-init to include the source file in "third_party"
 - **all-header.list** -- you can ignore this list, it's a historical left
 - **all-gn.list** -- all the *.gn and *.gni file used for "fg" command
 - **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need sweep the distraction item, and our focus right and precise as possible as we can.
 
-### About command name:
+### 7.2 About command name:
 
 The command names are designed to as short as possible. If there is any name confliction, you can redefine it as you want
 
@@ -155,6 +153,6 @@ The command names are designed to as short as possible. If there is any name con
 
 "fs" will exclude the comments starts from "//" as the same to "fc"，but "ff" does not act like that. Maybe "ff" will support that in the future. The comments between "/* */" is not excluded, because it's not the main comments style in WebRTC code.
 
-### MORE TO BE ADDED.....
+### 7.x MORE TO BE ADDED.....
 
 For more info, please ref to the tool's shell script
