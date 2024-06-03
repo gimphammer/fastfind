@@ -93,7 +93,9 @@ Enjoy it!~~
 
 Have a fun!~~
 
+<br />
 
+<br />
 
 ## 5. [More help you work more fluent]
 
@@ -108,8 +110,6 @@ you can ignore the shotcuts listed here, but if you are famillar with shotcut, y
 | (more to be added.....)                  |
 
 the specific shotcuts depend on the platform you used or the configuration set by you
-
-
 
 ### 5.2 VS-Code Setting(User)
 
