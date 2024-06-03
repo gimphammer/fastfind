@@ -9,7 +9,7 @@ This tool is designed to show respect to the visual assist which is the powerful
 
 fastfind use all-src.list to identify the files you need. Because not all file is needed, you can use command "ffse-help" to get some help. For historic reason, fastfind used the name of "ffse" which means "fast-find-symbol extension", and now it's the third version, so you can find something with the name "FF3_XXX" or "FFSE" in the shell script.......
 
-## 
+
 
 ## [Tool Init]
 
