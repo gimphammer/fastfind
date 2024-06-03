@@ -61,4 +61,10 @@ For more info, please ref to the tool's shell script
 
 
 
+## [Screenshot]
+
+![image-20240603162736239](readme.pic/image-20240603162736239.png)
+
+![image-20240603162922268](readme.pic/image-20240603162922268.png)
+
 Have a fun!~~
