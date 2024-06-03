@@ -71,9 +71,11 @@ The commands listed above: some are alias commands and some are original defined
 
 vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will quick jump to the line where the target locates.
 
-Enjoy it!~~
+Hint like this:
 
 ![image-20240603180600436](readme.pic/image-20240603180600436.png)
+
+Enjoy it!~~
 
 ## [What's you need to know]
 
