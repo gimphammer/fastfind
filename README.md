@@ -73,7 +73,7 @@ vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will 
 
 Enjoy it!~~
 
-
+![image-20240603180600436](readme.pic/image-20240603180600436.png)
 
 ## [What's you need to know]
 
