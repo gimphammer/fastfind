@@ -37,9 +37,9 @@ ffse-init
 
 
 
-## [Basic usage]
+## [Command usage]
 
-- fc "symbol"  -- to find where the symbol is used, or the function is called
+- fc [symbol]  -- to find where the symbol is used, or the function is called
 
 - fs [symbol] -- find all symbol in code base
 
@@ -53,6 +53,14 @@ ffse-init
 - fg [symbol] -- find [symbol] in *.gn and *.gni file
 
 The commands listed above: some are alias commands and some are original defined name in shell-script.
+
+
+
+## [Used in VS-Code]
+
+vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will quick jump to the line where the target locates.
+
+Enjoy it!~~
 
 
 
