@@ -97,9 +97,9 @@ Have a fun!~~
 
 ## 5. [Something help you work more fluently]
 
-### 5.1 Shotcut
+### 5.1 Shortcuts
 
-you can ignore the shotcuts listed here, but if you are famillar with shotcut, you can work more fluent. 
+you can ignore the shortcuts listed here, but if you are famillar with shortcuts, you can work more fluent. 
 
 | vs-code command ID                       |
 | ---------------------------------------- |
@@ -107,7 +107,7 @@ you can ignore the shotcuts listed here, but if you are famillar with shotcut, y
 | workbench.action.terminal.toggleTerminal |
 | (more to be added.....)                  |
 
-the specific shotcuts depend on the platform you used or the configuration set by you
+the specific shortcuts depend on the platform you used or the configuration set by you
 
 ### 5.2 VS-Code Setting(User)
 
