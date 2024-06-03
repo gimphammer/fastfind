@@ -95,7 +95,7 @@ Have a fun!~~
 
 <br />
 
-## 5. [More help you work more fluent]
+## 5. [Something help you work more fluently]
 
 ### 5.1 Shotcut
 
