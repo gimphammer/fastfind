@@ -1,5 +1,17 @@
 # fastfind
-## 1. [Background]
+## 1. [Screenshot]
+
+![image-20240603172210739](readme.pic/image-20240603172210739.png)
+
+![image-20240603172508178](readme.pic/image-20240603172508178.png)
+
+![image-20240603174233244](readme.pic/image-20240603174233244.png)
+
+Have a fun!~~
+
+<br />
+
+## 2. [Background]
 
 It's a tool designed for C++ symbol find based on shell. 
 
@@ -20,7 +32,7 @@ For historical reason, there are something named with "ffse" which means "fast-f
 
 <br />
 
-## 2. [Tool Init]
+## 3. [Tool Init]
 
 To init the tool, just:
 
@@ -48,9 +60,9 @@ ffse-init
 
 <br />
 
-## 3. [Command usage]
+## 4. [Command usage]
 
-### 3.1 Basic Command
+### 4.1 Basic Command
 
 - fc [symbol]  -- to find where the symbol is used, or the function is called
 
@@ -69,7 +81,7 @@ The commands listed above: some are alias commands and some are original defined
 
 
 
-### 3.2 Used in VS-Code
+### 4.2 Used in VS-Code
 
 vs-code has also integrated the shell-env, so you can run the fastfind in that env. But don't forget to choose the right shell-env which fastfind fits.
 
@@ -83,17 +95,7 @@ Enjoy it!~~
 
 <br />
 
-## 4. [Screenshot]
 
-![image-20240603172210739](readme.pic/image-20240603172210739.png)
-
-![image-20240603172508178](readme.pic/image-20240603172508178.png)
-
-![image-20240603174233244](readme.pic/image-20240603174233244.png)
-
-Have a fun!~~
-
-<br />
 
 ## 5. [Something help you work more fluently]
 
