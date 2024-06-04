@@ -18,7 +18,7 @@ It's a tool designed for C++ symbol find based on shell.
 It works under:
 
 - git-bash shell on Windows 
-- zsh on Mac. 
+- zsh on Mac.
 
 Maybe it can fit other shell-env, but not test is performed
 
@@ -138,22 +138,36 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 
 ## 7. [Something about  Design] -- TL;DR
 
-There are several list used by the fastfind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
+The FastFind is based on the regular expression, not C++ syntax. Although there is few basic C++ syntax analysis included, but that's only for  fast implementation.
 
-### 7.1 About list:
+### 7.1 About the List
+
+There are several list used by the fastfind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
 
 - **all-src.list** -- all source files of C++ code used to find the symbol you want. It includes all the *.h file and *.cc. But the source file in the directory of "third_party" is not included, because that's not the core source of webrtc. Anyway, you can modify the shell-script to let ffse-init to include the source file in "third_party"
 - **all-header.list** -- you can ignore this list, it's a historical left
 - **all-gn.list** -- all the *.gn and *.gni file used for "fg" command
 - **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need sweep the distraction item, and our focus right and precise as possible as we can.
 
-### 7.2 About command name:
+### 7.2 About command name
 
 The command names are designed to as short as possible. If there is any name confliction, you can redefine it as you want
 
-### Something internal:
+### 7.3 Something internal
 
 "fs" will exclude the comments starts from "//" as the same to "fc"，but "ff" does not act like that. Maybe "ff" will support that in the future. The comments between "/* */" is not excluded, because it's not the main comments style in WebRTC code.
+
+For the current version of FastFind(v3), its implementation is based on git-grep which has a domain-belonged shown in the result. It can help to know  which function the result locates in. That is similar to the visual assistant on Windows. Anyway, a few part of the domain-belonged is not what you are repect, but that will not confuse you. As you use it more and more, you will find that mis-match can be ignored
+
+### 7.4 Command Parameters
+
+You can use the command without any parameter, and that manner will help you to find most of what you want.
+
+When you use "fs" or "fc", the parameter of "-pm" will give some helpful info. "-pm" means "partial match". But I don't use this parameter very often. The basic command form shown in Chapter-4 can meets most of my find. 
+
+Yes, there are many other parameters in the tool now. But them will be revealed later, because, you know, WTFD is real a time-job. 
+
+
 
 ### 7.x MORE TO BE ADDED.....
 
