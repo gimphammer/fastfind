@@ -171,4 +171,4 @@ Yes, there are many other parameters in the tool now. But them will be revealed 
 
 ### 7.x MORE TO BE ADDED.....
 
-For more info, please ref to the tool's shell script
+For more info, please refer to the tool's shell script.
