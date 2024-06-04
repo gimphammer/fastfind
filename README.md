@@ -42,9 +42,9 @@ echo $HOME
 ffse-init
 ```
 
-"ffse-init" will prepare all the source file lists, used by fastfind, except for the "ignore.list". "ignore.list" is a list customized by your self. Refer to chapter 7.1 in this readme for more info on "ignore.list". You can also use the "ignore.list" located in the directory of [ref_list](https://github.com/gimphammer/fastfind/tree/master/ref_list) in this repository if you use the M97 of WebRTC. And put it under the WebRTC root directory like this:
+"ffse-init" will prepare all the source file lists, used by fastfind, except for the "ignore.list". "ignore.list" is a list customized by your self. Refer to chapter 7.1 in this readme for more info on "ignore.list". You can also use the "ignore.list" in the directory of [ref_list](https://github.com/gimphammer/fastfind/tree/master/ref_list), if you are working with the M97 of WebRTC. And put it under the WebRTC root directory like this:
 
-![image-20240603221224019](readme.pic/image-20240603221224019.png)
+![image-20240604131613818](../../Library/Application Support/typora-user-images/image-20240604131613818.png)
 
 <br />
 
@@ -109,7 +109,7 @@ you can ignore the shortcuts listed here, but if you are familiar with shortcuts
 
 the specific shortcuts depend on the platform you used or the configuration set by you
 
-### 5.2 VS-Code Setting(User)
+### 5.2 VS-Code Setting(for User)
 
 ```json
     "terminal.integrated.commandsToSkipShell": [
