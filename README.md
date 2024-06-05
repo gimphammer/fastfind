@@ -1,4 +1,4 @@
-# fastfind
+# FastFind
 ## 1. [Screenshot]
 
 ![image-20240603172210739](readme.pic/image-20240603172210739.png)
@@ -54,7 +54,7 @@ echo $HOME
 ffse-init
 ```
 
-"ffse-init" will prepare all the source file lists, used by fastfind, except for the "ignore.list". "ignore.list" is a list customized by your self. Refer to chapter 7.1 in this readme for more info on "ignore.list". You can also use the "ignore.list" in the directory of [ref_list](https://github.com/gimphammer/fastfind/tree/master/ref_list), if you are working with the M97 of WebRTC. And put it under the WebRTC root directory like this:
+"ffse-init" will prepare all the source file lists, used by FastFind, except for the "ignore.list". "ignore.list" is a list customized by your self. Refer to chapter 7.1 in this readme for more info on "ignore.list". You can also use the "ignore.list" in the directory of [ref_list](https://github.com/gimphammer/fastfind/tree/master/ref_list), if you are working with the M97 of WebRTC. And put it under the WebRTC root directory like this:
 
 ![image-20240604131613818](readme.pic/image-20240604131613818.png)
 
@@ -92,9 +92,9 @@ Only "ff" is search the file you set at at command parameter, and other commands
 
 ### 4.2 Used in VS-Code
 
-vs-code has also integrated the shell-env, so you can run the fastfind in that env. But don't forget to choose the right shell-env which fastfind fits.
+vs-code has also integrated the shell-env, so you can run the FastFind in that env. But don't forget to choose the right shell-env which FastFind fits.
 
-vs-code supply a candy: **[Ctrl + mouse left-click]** on fastfind's result will quick jump to the line where the target locates.
+vs-code supply a candy: **[Ctrl + mouse left-click]** on FastFind's result will quick jump to the line where the target locates.
 
 Hint like this:
 
@@ -112,11 +112,11 @@ Enjoy it!~~
 
 you can ignore the shortcuts listed here, but if you are familiar with shortcuts, you can work more fluently. 
 
-| vs-code command ID                       | Comments                                        |
-| ---------------------------------------- | ----------------------------------------------- |
-| copyRelativeFilePath                     | Get related file path, used in the "ff" command |
-| workbench.action.terminal.toggleTerminal |                                                 |
-| (more to be added.....)                  |                                                 |
+| vs-code command ID                       | Comments                                                     |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| copyRelativeFilePath                     | Get related file path, used in the "ff" command              |
+| workbench.action.terminal.toggleTerminal | To help you get a larger view of your editor zone, or active the terminal view when you wanna use FastFind |
+| (more to be added.....)                  |                                                              |
 
 the specific shortcuts depend on the platform you used or the configuration set by you
 
@@ -153,15 +153,15 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 
 the IDE has the features on code analysis, such as search, find defined, find reference, etc. On many scenarios these feature  work well, especially on the code base which is not Huge, but that dose not always happen on WebRTC. Of course you can reduce the project included in to narrow the search range, for example, just focus on the VCM module by open the only several projects. But the limits will follow that operation immediately.....
 
-At first, I solve that problem by the `find` and `grep` and other command. But every time, I need to type a lot of words, and some time, I need to search the web on how to write the regular expression what I need.  And another issue that drive me crazy is the long time I need to wait to perform the these command due to the huge amount find I/O and grep process. WebRTC is huge, there are about 1-million files on the code base, but what I need is C++ source file which is only a small part of it, and also not all the C++ source file is what I need.....Actually, only about 4700 files are the ones what I need to care about, which is the core source of WebRTC exclude the third_party.
+At first, I solve that problem by the `find` and `grep` and other command. But every time, I need to type a lot of words.  And another issue that drive me crazy is the long time I need to wait to perform the these commands due to the huge amount `find` I/O and `grep` process. WebRTC is huge, there are about 1-million files on the code base, but what I need is C++ source file which is only a small part of it, and also not all the C++ source file is what I need.....Actually, only about 4700 files are the ones I need to care about, which is the core source of WebRTC exclude the third_party.
 
-Yes, it's really sucks, that's not  the right way to do the right thing. What I want is just copy some keyword, and select the find-mode, then let something do it for me for the left. What's more, a colorful highlight should be presented in the result, and help me focus on what I need. Then the fastfind happened to the world...
+Yes, it's really sucks, that's not  the right way to do the right thing. What I want is just copy some keyword, and select the find-mode, then let something do it for me for the left. What's more, a colorful highlight should be presented in the result, and that can help me focus on what I need to. Then the FastFind happened to the world...
 
 The FastFind is based on the regular expression, not C++ syntax. Although there is few basic C++ syntax analysis included, but that's only for  fast implementation. 
 
 ### 7.2 About the List
 
-There are several list used by the fastfind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
+There are several list used by the FastFind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
 
 - **all-src.list** -- all source files of C++ code used to find the symbol you want. It includes all the *.h file and *.cc. But the source file in the directory of "third_party" is not included, because that's not the core source of webrtc. Anyway, you can modify the shell-script to let ffse-init to include the source file in "third_party"
 - **all-header.list** -- you can ignore this list, it's a historical left
