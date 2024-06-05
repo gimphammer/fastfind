@@ -112,11 +112,11 @@ Enjoy it!~~
 
 you can ignore the shortcuts listed here, but if you are familiar with shortcuts, you can work more fluently. 
 
-| vs-code command ID                       |
-| ---------------------------------------- |
-| copyRelativeFilePath                     |
-| workbench.action.terminal.toggleTerminal |
-| (more to be added.....)                  |
+| vs-code command ID                       | Comments                                        |
+| ---------------------------------------- | ----------------------------------------------- |
+| copyRelativeFilePath                     | Get related file path, used in the "ff" command |
+| workbench.action.terminal.toggleTerminal |                                                 |
+| (more to be added.....)                  |                                                 |
 
 the specific shortcuts depend on the platform you used or the configuration set by you
 
@@ -136,6 +136,8 @@ the specific shortcuts depend on the platform you used or the configuration set 
 ```
 
 you can just copy these JSON fregments to the user setting.json of vs-code
+
+
 
 <br />
 
