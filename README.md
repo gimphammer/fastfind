@@ -66,18 +66,27 @@ ffse-init
 
 - fc [symbol]  -- to find where the symbol is used, or the function is called
 
-- fs [symbol] -- find all symbol in code base
+- fs [symbol] -- find all symbol in code base, not only where it is used, but also where it is defined. it can be function name, or var-name
 
-- fdd [class-name] -- find all the class derived from the class named by [class-name]
+- fdd [class-name] -- find all the class derived from the class named by [class-name], 
 
 - fdc [class-name] -- find who is the father class for  [class-name]
 
 - ff [symbol]  [file-in-relative-path] -- find all the symbol named by [symbol] in the [file-in-relative-path] 
 
-
-- fg [symbol] -- find [symbol] in *.gn and *.gni file
+- fg [symbol] -- find [symbol] in *.gn and *.gni file.  use this command to find something and analyze the WebRTC make-system
 
 The commands listed above: some are alias commands and some are original defined name in shell-script.
+
+Many of the commands include filters internal, to filter something it does not care about to make the result as concise as possible. In most of the using case, we wanna find where the function is called, or where the variance is used, to achieve that, we need to filter the C++ domain symbol, comments, And "fc" is the one who includes most filter, 
+
+Only "ff" is search the file you set at at command parameter, and other commands search the list initialized by "ffse-init".
+
+"fdd" and "fdc" is usually used to analyze the hierarchy of class. Sometime they get the same result.
+
+"fs" has the fewest filter. If you can not find what you want by "fc", you can try "fs". We someting
+
+"fg" is command like the "fs", but only works on all the gn stuff
 
 
 
@@ -138,9 +147,17 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 
 ## 7. [Something about  Design] -- TL;DR
 
-The FastFind is based on the regular expression, not C++ syntax. Although there is few basic C++ syntax analysis included, but that's only for  fast implementation.
+### 7.1 Why FastFind happened
 
-### 7.1 About the List
+the IDE has the features on code analysis, such as search, find defined, find reference, etc. On many scenarios these feature  work well, especially on the code base which is not Huge, but that dose not always happen on WebRTC. Of course you can reduce the project included in to narrow the search range, for example, just focus on the VCM module by open the only several projects. But the limits will follow that operation immediately.....
+
+At first, I solve that problem by the `find` and `grep` and other command. But every time, I need to type a lot of words, and some time, I need to search the web on how to write the regular expression what I need.  And another issue that drive me crazy is the long time I need to wait to perform the these command due to the huge amount find I/O and grep process. WebRTC is huge, there are about 1-million files on the code base, but what I need is C++ source file which is only a small part of it, and also not all the C++ source file is what I need.....Actually, only about 4700 files are the ones what I need to care about, which is the core source of WebRTC exclude the third_party.
+
+Yes, it's really sucks, that's not  the right way to do the right thing. What I want is just copy some keyword, and select the find-mode, then let something do it for me for the left. What's more, a colorful highlight should be presented in the result, and help me focus on what I need. Then the fastfind happened to the world...
+
+The FastFind is based on the regular expression, not C++ syntax. Although there is few basic C++ syntax analysis included, but that's only for  fast implementation. 
+
+### 7.2 About the List
 
 There are several list used by the fastfind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
 
@@ -149,17 +166,17 @@ There are several list used by the fastfind. As mentioned above, "ffse-init" wil
 - **all-gn.list** -- all the *.gn and *.gni file used for "fg" command
 - **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need sweep the distraction item, and our focus right and precise as possible as we can.
 
-### 7.2 About command name
+### 7.3 About command name
 
 The command names are designed to as short as possible. If there is any name confliction, you can redefine it as you want
 
-### 7.3 Something internal
+### 7.4 Something internal
 
 "fs" will exclude the comments starts from "//" as the same to "fc"，but "ff" does not act like that. Maybe "ff" will support that in the future. The comments between "/* */" is not excluded, because it's not the main comments style in WebRTC code.
 
 For the current version of FastFind(v3), its implementation is based on git-grep which has a domain-belonged shown in the result. It can help to know  which function the result locates in. That is similar to the visual assistant on Windows. Anyway, a few part of the domain-belonged is not what you are repect, but that will not confuse you. As you use it more and more, you will find that mis-match can be ignored
 
-### 7.4 Command Parameters
+### 7.5 Command Parameters
 
 You can use the command without any parameter, and that manner will help you to find most of what you want.
 
@@ -172,3 +189,8 @@ Yes, there are many other parameters in the tool now. But them will be revealed 
 ### 7.x MORE TO BE ADDED.....
 
 For more info, please refer to the tool's shell script.
+
+<BR />
+
+
+
