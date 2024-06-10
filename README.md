@@ -141,7 +141,7 @@ you can just copy these JSON fregments to the user setting.json of vs-code
 
 ### 5.3 Combined with "grep"
 
-Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with grep, such as:
+Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with grep by the pipe, such as:
 
 ![image-20240610203507258](readme.pic/image-20240610203507258.png)
 
