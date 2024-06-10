@@ -195,7 +195,7 @@ the IDE has the features on code analysis, such as search, find defined, find re
 
 At first, I solve that problem by the `find` ,`grep` and other command. But every time, I have to type a lot of words.  And another issue that drive me crazy is the long time I need to wait to perform the these commands due to the huge amount `find` I/O and `grep` process. WebRTC is too huge, there are about 1-million files on the code base, but what I need is C++ source file which is only a small part of it, and also not all the C++ source files are what I need.....Actually, only about 4700 files are the ones I am interesting in, which is the core source of WebRTC excluding the third_party.
 
-To always search in such a huge code base is not  the right way to do the right thing. Yes, It s*cks. What I want is just copy some keyword, and select the find-mode, then let some guy do it for me for the left. What's more, a colorful highlight should be presented in the result, because that can help me focus on what I need. Then the FastFind happened to the world...
+To always search in such a huge code base is not  the right way to do the right thing. Yes, It s*cks. What I want is just copy some keyword, and select the find-mode, then let some guy do the left for me. What's more, a colorful highlight should be presented in the result, because that can help me focus on what I need. Then the FastFind happened to the world...
 
 The FastFind is based on the regular expression, not C++ syntax. Although there is few basic C++ syntax analysis included, but that's only for  fast implementation. 
 
