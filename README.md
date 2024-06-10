@@ -139,6 +139,44 @@ you can just copy these JSON fregments to the user setting.json of vs-code
 
 
 
+### 5.3 Combined with "grep"
+
+Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with grep, such as:
+
+![image-20240610203507258](readme.pic/image-20240610203507258.png)
+
+After being concatenated with "gvi", the lines containing "example" is excluded:
+
+![image-20240610203619327](readme.pic/image-20240610203619327.png)
+
+"gvi" is a aliased command of "grep" I used, Here is some alias I used frequently:
+
+```bash
+alias gp='grep '
+alias gi='grep -i '
+alias gv='grep -v '
+alias gvi='grep -vi'
+alias giv=gvi
+alias gw='grep -w '
+alias gnw='grep -nw'
+alias gwn=gnw
+#gh: '-H' is useful when use grep [on a single file] in vscode
+#      it makes the result prefixed with filename and relative path
+#      so you can jump to file-line with "ctrl+left click"
+alias gf='grep -nwH'   #gf means grep in one file...
+
+```
+
+So, that is an example on how to exclude the result with grep. 
+
+What's more we can also filter the result by "grep" to leave what you want based on the result. For example, you just only need the FastFind result in "p2p" directory, then try it like this:
+
+![image-20240610204902294](readme.pic/image-20240610204902294.png)
+
+Don't be surprised when you see the purple color of file name is disappeared. If you are interesting in the tool, you will find the reason soon, and that's not a big deal we need to care about......
+
+
+
 <br />
 
 ## 6. [What's you need to know]
