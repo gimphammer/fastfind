@@ -149,7 +149,7 @@ After being concatenated with `gvi`, the lines containing "example" is excluded:
 
 ![image-20240610203619327](readme.pic/image-20240610203619327.png)
 
-`gvi` is one of aliased `grep` commands I used, Here are some aliases I used frequently:
+`gvi` is one of aliased `grep` commands I used. Here are some aliases I used frequently:
 
 ```bash
 alias gp='grep '
