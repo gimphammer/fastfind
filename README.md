@@ -13,7 +13,7 @@ Have a fun!~~
 
 ## 2. [Background]
 
-It's a tool designed for C++ symbol find based on shell. 
+It's a tool designed for C++ symbol search based on shell. 
 
 It works under:
 
