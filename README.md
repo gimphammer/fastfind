@@ -169,7 +169,7 @@ alias gf='grep -nwH'   #gf means grep in one file...
 
 So, that is an example on how to exclude the result with "`grep`". 
 
-At other time, there is a large amount of result found by FastFind, but only a few of them is what you are interesting in. Then you can also extract something from the FastFind's result by "`grep`". For example, if you only need the result related to "p2p" directory, then try it like this:
+At other time, there is a large amount of results found by FastFind, but only a few of them is what you are interesting in. Then you can also extract those from the FastFind's result by "`grep`". For example, if you only need the result related to "p2p" directory, then try it like this:
 
 ![image-20240610205414775](readme.pic/image-20240610205414775.png)
 
