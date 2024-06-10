@@ -169,11 +169,13 @@ alias gf='grep -nwH'   #gf means grep in one file...
 
 So, that is an example on how to exclude the result with grep. 
 
-What's more we can also filter the result by "grep" to leave what you want based on the result. For example, you just only need the FastFind result in "p2p" directory, then try it like this:
+What's more, you can also filter the result by "grep" to leave what you want based on the result. For example, if you only need the FastFind result in "p2p" directory, then try it like this:
 
 ![image-20240610205414775](readme.pic/image-20240610205414775.png)
 
-Don't be surprised when you see the purple color of file name is disappeared. If you are interesting in the tool, you will find the reason soon, and that's not a big deal we need to care about......
+My alias of "gi" is given above.
+
+Don't be surprised when you see the purple color of file is disappeared. If you are interesting in the tool, you will find the reason soon, and that's not a big deal we need to care about......
 
 
 
