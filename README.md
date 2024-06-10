@@ -141,15 +141,15 @@ you can just copy these JSON fregments to the user setting.json of vs-code
 
 ### 5.3 Combined with "grep"
 
-Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with grep by the pipe, such as:
+Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with grep by the pipe. Before excluding with "`grep`":
 
 ![image-20240610203507258](readme.pic/image-20240610203507258.png)
 
-After being concatenated with "gvi", the lines containing "example" is excluded:
+After being concatenated with "`gvi`", the lines containing "example" is excluded:
 
 ![image-20240610203619327](readme.pic/image-20240610203619327.png)
 
-"gvi" is a aliased command of "grep" I used, Here is some alias I used frequently:
+"`gvi`" is one of aliased "`grep`" commands I used, Here is some alias I used frequently:
 
 ```bash
 alias gp='grep '
@@ -169,11 +169,11 @@ alias gf='grep -nwH'   #gf means grep in one file...
 
 So, that is an example on how to exclude the result with grep. 
 
-What's more, you can also filter the result by "grep" to leave what you want based on the result. For example, if you only need the FastFind result in "p2p" directory, then try it like this:
+What's more, you can also filter the result by "`grep`" to leave what you want based on the result. For example, if you only need the FastFind result in "p2p" directory, then try it like this:
 
 ![image-20240610205414775](readme.pic/image-20240610205414775.png)
 
-My alias of "gi" is given above.
+The "`gi`" is also an alias given above. 
 
 Don't be surprised when you see the purple color of file is disappeared. If you are interesting in the tool, you will find the reason soon, and that's not a big deal we need to care about......
 
