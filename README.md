@@ -141,15 +141,15 @@ you can just copy these JSON fregments to the user setting.json of vs-code
 
 ### 5.3 Combined with "grep"
 
-Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with "`grep`" by the pipe. Here comes the the example. Before concatenation:
+Sometime, there are some results which are not the ones you wanna focus on. If you wanna exclude them, then you can concatenate FastFind with `grep` by the pipe. Here comes the the example. Before concatenation:
 
 ![image-20240610203507258](readme.pic/image-20240610203507258.png)
 
-After being concatenated with "`gvi`", the lines containing "example" is excluded:
+After being concatenated with `gvi`, the lines containing "example" is excluded:
 
 ![image-20240610203619327](readme.pic/image-20240610203619327.png)
 
-"`gvi`" is one of aliased "`grep`" commands I used, Here are some aliases I used frequently:
+`gvi` is one of aliased `grep` commands I used, Here are some aliases I used frequently:
 
 ```bash
 alias gp='grep '
@@ -167,13 +167,13 @@ alias gf='grep -nwH'   #gf means grep in one file...
 
 ```
 
-So, that is an example on how to exclude the result with "`grep`". 
+So, that is an example on how to exclude the result with `grep`. 
 
-At other time, there is a large amount of results found by FastFind, but only a few of them is what you are interesting in. Then you can also extract those from the FastFind's result by "`grep`". For example, if you only need the result related to "p2p" directory, then try it like this:
+At other time, there is a large amount of results found by FastFind, but only a few of them is what you are interesting in. Then you can also extract those from the FastFind's result by `grep`. For example, if you only need the result related to "p2p" directory, then try it like this:
 
 ![image-20240610205414775](readme.pic/image-20240610205414775.png)
 
-The "`gi`" is also an alias given above. 
+The `gi` is also an alias given above. 
 
 Don't be surprised when you see the purple color of file is disappeared. If you are interesting in the tool, you will find the reason soon, and that's not a big deal we need to care about......
 
