@@ -110,7 +110,7 @@ Enjoy it!~~
 
 ### 5.1 Shortcuts
 
-you can ignore the shortcuts listed here, but if you are familiar with shortcuts, you can work more fluently. 
+you can ignore the shortcuts listed here, but if you are familiar with shortcuts, you can work more fluently. The specific key-maps are not listed here. You can have your own setting according to your personal preference.
 
 | vs-code command ID                       | Comments                                                     |
 | ---------------------------------------- | ------------------------------------------------------------ |
