@@ -226,6 +226,20 @@ When you use "fs" or "fc", the parameter of "-pm" will give some helpful info. "
 
 Yes, there are many other parameters in the tool now. But them will be revealed later, because, you know, WTFD is real a time-job. 
 
+### 7.5 About The Color in Highlight
+
+That's the job the `ffse-init` does. Search the shell script, you will find that:
+
+```shell
+  git config --global color.grep.linenumber green
+  git config --global color.grep.match      "brightyellow 241"
+  git config --global color.grep.filename   magenta
+  git config --global color.grep.function   214
+  git config --global color.grep.matchContext  214    #white
+```
+
+You have saw many screen-shots in the previous chapters, and those colorful highlights are controlled by the `git config` list above. The value of the color is related to [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code), you can have you own color setting if you are interesting in this topic.
+
 
 
 ### 7.x MORE TO BE ADDED.....
