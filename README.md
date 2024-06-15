@@ -189,7 +189,7 @@ Now, the tool is designed basing on the C++ code style similar to WebRTC, if in 
 
 ## 7. [Something about  Design] -- TL;DR
 
-### 7.1 Why FastFind happened
+### 7.1 Why FastFind Happened
 
 the IDE has the features on code analysis, such as search, find defined, find reference, etc. On many scenarios these feature  work well, especially on the code base which is not big, but that dose not always happen on WebRTC. Maybe you can reduce the project included in to narrow the search scope, for example, just focus on the VCM module by open the only several projects. But the limits will follow that operation immediately.....
 
@@ -208,11 +208,11 @@ There are several list used by the FastFind. As mentioned above, "ffse-init" wil
 - **all-gn.list** -- all the *.gn and *.gni file used for "fg" command
 - **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need sweep the distraction item, and our focus right and precise as possible as we can.
 
-### 7.3 About command name
+### 7.3 About Command Name
 
-The command names are designed to as short as possible. If there is any name confliction, you can redefine it as you want
+The command names are designed to as short as possible. If there is any name confliction, you can redefine or re-alias it as you want
 
-### 7.4 Something internal
+### 7.4 Something Internal
 
 "fs" will exclude the comments starts from "//" as the same to "fc"，but "ff" does not act like that. Maybe "ff" will support that in the future. The comments between "/* */" is not excluded, because it's not the main comments style in WebRTC code.
 
@@ -226,7 +226,7 @@ When you use "fs" or "fc", the parameter of "-pm" will give some helpful info. "
 
 Yes, there are many other parameters in the tool now. But them will be revealed later, because, you know, WTFD is real a time-job. 
 
-### 7.5 About The Color in Highlight
+### 7.5 About the Colorful Highlight
 
 That's the job the `ffse-init` does. Search the shell script, you will find that:
 
