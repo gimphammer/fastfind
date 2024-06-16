@@ -7,7 +7,7 @@
 
 ![image-20240603174233244](readme.pic/image-20240603174233244.png)
 
-Have a fun!~~:boom::smiling_imp:
+Have a fun!~~:boom: :smiling_imp:
 
 <br />
 
