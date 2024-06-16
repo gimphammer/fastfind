@@ -201,12 +201,12 @@ The FastFind is based on the regular expression, not C++ syntax. Although there 
 
 ### 7.2 About the List
 
-There are several list used by the FastFind. As mentioned above, "ffse-init" will prepare all the list except for ignore.list. Here is some explanation on these list:
+There are several list used by the FastFind. As mentioned above, "ffse-init" will prepare all the lists except for ignore.list. Here is some explanation on these list:
 
-- **all-src.list** -- all source files of C++ code used to find the symbol you want. It includes all the *.h file and *.cc. But the source file in the directory of "third_party" is not included, because that's not the core source of webrtc. Anyway, you can modify the shell-script to let ffse-init to include the source file in "third_party"
+- **all-src.list** -- all source files of C++ code used to find the symbol you want. It includes all the *.h file and *.cc. But the source file in the directory of "third_party" is not included, because that's not the core party of WebRTC. Anyway, you can modify the shell-script to let ffse-init to include the source files in "third_party"
 - **all-header.list** -- you can ignore this list, it's a historical left
 - **all-gn.list** -- all the *.gn and *.gni file used for "fg" command
-- **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need sweep the distraction item, and our focus right and precise as possible as we can.
+- **ignore.list** -- For some historical reason, not all the source files are used for  the current WebRTC version. All those files are listed in `ignore.list`. For example: jitter_buffer.h and jitter_buffer.cc is obsoleted in the M97, so when we do the code analysis, we need to sweep the distraction, and make our focus right and precise as possible as we can.
 
 ### 7.3 About Command Name
 
@@ -244,7 +244,7 @@ You have saw many screen-shots in the previous chapters, and those colorful high
 
 ### 7.x MORE TO BE ADDED.....
 
-For more info, please refer to the tool's shell script.
+Please refer to the tool's shell script for more information.
 
 <BR />
 
