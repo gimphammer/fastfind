@@ -106,7 +106,7 @@ Enjoy it!~~
 
 
 
-## 5. [Something help you work more fluently]
+## 5. [Something help you work more efficiently]
 
 ### 5.1 Shortcuts
 
@@ -120,7 +120,7 @@ you can ignore the shortcuts listed here, but if you are familiar with shortcuts
 
 the specific shortcuts depend on the platform you used or the configuration set by you
 
-### 5.2 VS-Code Setting(for User)
+### 5.2 VS-Code Setting(User-Level)
 
 ```json
     "terminal.integrated.commandsToSkipShell": [
