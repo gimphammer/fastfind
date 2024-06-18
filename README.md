@@ -183,7 +183,7 @@ Don't be surprised when you see the purple color of file is disappeared. If you 
 
 ## 6. [What's you need to know]
 
-Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it. Don't forget to modify the shell-function `if_in_webrtc_src_dir`：
+Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it. Don't forget to modify the shell-function `if_in_webrtc_src_dir`，just `return 1` directly when enter the function：
 
 ```shell
 function if_in_webrtc_src_dir() {
@@ -207,6 +207,8 @@ function if_in_webrtc_src_dir() {
 }
 
 ```
+
+
 
 
 
