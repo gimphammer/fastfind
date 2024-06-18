@@ -183,7 +183,32 @@ Don't be surprised when you see the purple color of file is disappeared. If you 
 
 ## 6. [What's you need to know]
 
-Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it....
+Now, the tool is designed basing on the C++ code style similar to WebRTC, if in other code style, you can try it. Don't forget to modify the shell-function `if_in_webrtc_src_dir`：
+
+```shell
+function if_in_webrtc_src_dir() {
+
+  #temp code for other code-base，
+  #return true directly
+  return 1
+
+
+  local cur_path=$PWD
+
+  if [ ! -d "${cur_path}/api" ]; then
+    echo "[command meets error]:"
+    echo "    not in the directory: \${webrtc_root}/src !!!"
+    echo "    current dir is \"${cur_path}\", make sure you are under \${webrtc_root}/src "
+    echo "    this error will terminate the command......"
+    return 0
+  fi
+
+  return 1
+}
+
+```
+
+
 
 <br />
 
