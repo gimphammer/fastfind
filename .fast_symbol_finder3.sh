@@ -11,9 +11,10 @@ FF3_MODE_GN='GN Mode'
 FF3_GREP_CMD='git grep '
 FFSE_PLATFORM_NAME=$(uname)
 FFSE_READ_ARRAY_PARAM=""
-
+FF3_USE_CURRENT_AS_LIST_DIR=1 #1表示，用当前目录为list文件的存放目录。0表示，用webrtc原生的src目录为list存放目录 
 
 ##############  History  ###########
+#### v3.2.4 @02.13.2026 allow not in dir: webrtc/src
 #### v3.2.3 @07.02.2020
 #### - exclude "forward declaration" when call "fdd [classname]"
 ####
@@ -320,6 +321,11 @@ function ffse-help() {
 #######################   for file-list update   #######################
 ########################################################################
 function if_in_webrtc_src_dir() {
+  #FF3_USE_CURRENT_AS_LIST_DIR=1，允许不在webrtc/src目录下
+  if [ $FF3_USE_CURRENT_AS_LIST_DIR -eq 1 ]; then
+    return 0
+  fi
+
   local cur_path=$PWD
 
   if [ ! -d "${cur_path}/api" ]; then
@@ -355,14 +361,47 @@ function ffse-init() {
   git config --global color.grep.matchContext  214    #white
   echo "git-grep color setting is done..."
 
+  #增加提示：
+  # 打印USE_TARGET_ROOT_DIR的值，并提示是否修改
+  echo -e "FF3_USE_CURRENT_AS_LIST_DIR=${FF3_USE_CURRENT_AS_LIST_DIR}"
+  echo -e "usage: if FF3_USE_CURRENT_AS_LIST_DIR=1, the current directory is used as the list-saving dir."
+  echo -e "       otherwize, you should in directory: \"webrtc/src\" "
+  echo -e "       Are you sure to continule? (\"y\" for continue, any other input to abort)"
+
+  # 获取键盘输入
+  if [ "$FFSE_PLATFORM_NAME" = "Darwin" ]; then
+    # Zsh 中使用 -k 参数
+    read -k 1 key
+  else
+      # Bash/Git Bash 中使用 -n 1 参数
+    read -n 1 key
+  fi
+  # 没输入enter键，则终止执行
+  if [ -n "$key" ] && [ "$key" != $'y' ]; then
+    echo "aborted by user!"
+    exit 1
+  else
+    echo -e "\ncontinue to process......"
+  fi
+
   if_in_webrtc_src_dir
   ret=$?
-  if [ $ret -eq 0 ]; then
-    return
+  if [ "$ret" -eq 0 ]  && [ "$FF3_USE_CURRENT_AS_LIST_DIR" -ne 1 ]; then
+    echo "Aborted, FF3_USE_CURRENT_AS_LIST_DIR=${FF3_USE_CURRENT_AS_LIST_DIR}, "
+    echo "and you are not in dir: webrtc/src"
+    exit 1
+    # return  #error case
   fi
 
   local cur_path=$PWD
-  local header_list="${PWD}/../${FF3_HEADER_LIST}"
+  local list_file_root=""
+  if [ "$FF3_USE_CURRENT_AS_LIST_DIR" -eq 1 ]; then
+    list_file_root="${PWD}"
+  else
+    list_file_root="${PWD}/.."
+  fi
+  
+  local header_list="${list_file_root}/${FF3_HEADER_LIST}"
   if [ -e "$header_list" ];then
     rm ${header_list}
   fi
@@ -370,7 +409,7 @@ function ffse-init() {
   echo "header list has been updated: ${header_list}"
 
 
-  local srcs_list="${PWD}/../${FF3_SRC_LIST}"
+  local srcs_list="${list_file_root}/${FF3_SRC_LIST}"
   if [ -e "${srcs_list}" ];then
     rm ${srcs_list}
   fi
@@ -379,7 +418,7 @@ function ffse-init() {
   echo "source list has been updated: ${srcs_list}"
 
 
-  local gn_list="${PWD}/../${FF3_GN_LIST}"
+  local gn_list="${list_file_root}/${FF3_GN_LIST}"
   if [ -e "${gn_list}" ];then
     rm ${gn_list}
   fi
@@ -410,7 +449,7 @@ function ffse-show-basic-info() {
 function fast_symbol_finder_core() {
   if_in_webrtc_src_dir
   ret=$?
-  if [ $ret -eq 0 ]; then
+  if [ $ret -eq 0 ] && [ $FF3_USE_CURRENT_AS_LIST_DIR -ne 1 ]; then
       return
   fi
 
@@ -440,7 +479,7 @@ function fast_symbol_finder_core() {
   if_file_exists "$target_list"
   ret=$?
   if [ $ret -eq 0 ]; then
-      return
+    return
   fi  
 
   local param_cnt=$#
@@ -761,8 +800,17 @@ function fast_find_in_header() {
 function fast_find_in_c_and_cpp_source() {
   
   local cur_path=`pwd`
-  local target_list="$cur_path/../$FF3_SRC_LIST"
-  local ignore_list="$cur_path/../$FF3_IGNORE_LIST"
+  local list_file_root=$cur_path
+
+  
+  if [ "$FF3_USE_CURRENT_AS_LIST_DIR" -ne 1 ]; then
+    list_file_root="${cur_path}/.."
+  fi
+
+
+
+  local target_list="$list_file_root/$FF3_SRC_LIST"
+  local ignore_list="$list_file_root/$FF3_IGNORE_LIST"
   local inclusive_key=$1
   shift  #remove the inclusive-key
 
