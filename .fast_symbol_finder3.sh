@@ -146,7 +146,8 @@ alias find-all-target-file='find . -type f -regex "$FF3_INCLUDE_FILE_REGEX" \
 -not -path "*android*" \
 -not -path "*mock*"    \
 -not -path "*/objc/*"  \
--not -path "*/mac/*" '
+-not -path "*/mac/*"   \
+| sort '
 
 alias find-all-target-header='find . -type f -regex "$FF3_INCLUDE_HEADER_REGEX" \
 -not -regex "$FF3_EXCLUDE_FILE_REGEX" \
@@ -159,9 +160,10 @@ alias find-all-target-header='find . -type f -regex "$FF3_INCLUDE_HEADER_REGEX" 
 -not -path "*android*" \
 -not -path "*mock*"    \
 -not -path "*/objc/*"  \
--not -path "*/mac/*" '
+-not -path "*/mac/*"   \
+| sort '
 
-alias find-all-gn-files='find . -type f -regex ".*\.gn\|.*\.gni" '
+alias find-all-gn-files='find . -type f -regex ".*\.gn\|.*\.gni" | sort '
 
 ########################   win git-bash filter   ########################
 FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG="RTC_LOG\|RTC_DLOG\|TRACE_EVENT0\|RTC_DCHECK\|<<"
@@ -205,7 +207,8 @@ alias find-all-target-file='find -E . -regex "$FF3_INCLUDE_FILE_REGEX" \
 -not -path "*/.git/*"  \
 -not -path "*/out/*"   \
 -not -path "*android*" \
--not -path "*mock*"    '
+-not -path "*mock*"    \
+| sort '
 #-not -path "*/objc/*" '
 
 alias find-all-target-header='find -E . -regex "$FF3_INCLUDE_HEADER_REGEX" \
@@ -217,11 +220,12 @@ alias find-all-target-header='find -E . -regex "$FF3_INCLUDE_HEADER_REGEX" \
 -not -path "*/.git/*"  \
 -not -path "*/out/*"   \
 -not -path "*android*" \
--not -path "*mock*"    '
+-not -path "*mock*"    \
+| sort '
 #-not -path "*/objc/*" '
 
 
-alias find-all-gn-files='find -E . -regex ".*\.gn|.*\.gni" '
+alias find-all-gn-files='find -E . -regex ".*\.gn|.*\.gni" | sort '
 
 ########################   mac-zsh filter   ########################
 FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG="RTC_LOG\|RTC_DLOG\|TRACE_EVENT0\|RTC_DCHECK\|<<"
