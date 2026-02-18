@@ -711,7 +711,16 @@ function fast_symbol_finder_core() {
 #fast_find_in_gn "video_send_stream.h" -d
 function fast_find_in_gn() {
   local cur_path=`pwd`
-  local target_list="$cur_path/../$FF3_GN_LIST"
+
+
+  if [ "$FF3_USE_CURRENT_AS_LIST_DIR" -eq 1 ]; then
+    list_file_root="${cur_path}"
+  else
+    list_file_root="${cur_path}/.."
+  fi
+
+
+  local target_list="${list_file_root}/$FF3_GN_LIST"
   local ignore_list=""
   local inclusive_key=$1
 
