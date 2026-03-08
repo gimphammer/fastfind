@@ -761,9 +761,16 @@ function fast_find_in_gn() {
 # fast_find_in_header is same to fast_find_in_c_and_cpp_source
 # the only thing different is the target-list
 function fast_find_in_header() {
-  local cur_path=`pwd`
-  local target_list="$cur_path/../$FF3_HEADER_LIST"
-  local ignore_list="$cur_path/../$FF3_IGNORE_LIST"
+  local cur_path=$PWD
+  local list_file_root=""
+  if [ "$FF3_USE_CURRENT_AS_LIST_DIR" -eq 1 ]; then
+    list_file_root="${PWD}"
+  else
+    list_file_root="${PWD}/.."
+  fi
+
+  local target_list="${list_file_root}/$FF3_HEADER_LIST"
+  local ignore_list="${list_file_root}/$FF3_IGNORE_LIST"
   local inclusive_key=$1
   shift  #remove the inclusive-key
 
@@ -1146,7 +1153,7 @@ function fdf() { #find definition of function
 function fdc() {  #find definiton for class/struct...
   local keyword=$1
   shift 
-  fast_find_in_c_and_cpp_source $keyword "-nf" "-efd" $@ |  grep --color=never  -E "class|struct"
+  fast_find_in_c_and_cpp_source $keyword "-nf" "-efd" $@ |  grep --color=never  -E "class|struct|enum"
 }
 
 function fdd() {  #find definiton for derived class from "keyword"
@@ -1163,6 +1170,7 @@ function ffse-cmd-list() {
   echo    "fh  : find in headers,       fh = fast_find_in_header"
   echo    "fg  : find in gn-files,      fg = fast_find_in_gn"
   echo    "fc  : find call"
+  echo    "fdf : find definition of function"
   echo    "fdd : find definition on derivation relationship of class"
   echo -e "fdc : find definition for class, it's compound function\n"
 }
