@@ -14,6 +14,7 @@ FFSE_READ_ARRAY_PARAM=""
 FF3_USE_CURRENT_AS_LIST_DIR=1 #1表示，用当前目录为list文件的存放目录。0表示，用webrtc原生的src目录为list存放目录 
 
 ##############  History  ###########
+#### v3.2.5 @03.14.2026 refine fdf - find definition of funciton
 #### v3.2.4 @02.13.2026 allow not in dir: webrtc/src
 #### v3.2.3 @07.02.2020
 #### - exclude "forward declaration" when call "fdd [classname]"
@@ -502,6 +503,7 @@ function fast_symbol_finder_core() {
   local ignore_files_by_manual=()  #ignore files, send manually from command parameter...
   local break_lines=0
   local exclude_forward_declaration=0  
+  local exclude_function_call=0
 
   for ((i=1; i<=param_cnt; i++)) do
     eval local this_param=\${$i}
@@ -548,7 +550,9 @@ function fast_symbol_finder_core() {
     elif [[ $this_param == -if=* ]]; then #-if = ignore files
       # get the string after "-if="
       IFS=',' read -r $FFSE_READ_ARRAY_PARAM ignore_files_by_manual <<< "${this_param#*=}"
-    else 
+    elif [ "$this_param" = "-efc" ]; then ##efc - exclude function call
+      exclude_function_call=1
+    else
       extra_grep_param="$extra_grep_param $this_param"
     fi
   done
@@ -621,6 +625,11 @@ function fast_symbol_finder_core() {
   if ! [ -z $exclude_pattern ]; then
     pattern_to_process="$pattern_to_process --and --not -e \"$exclude_pattern\""
   fi
+
+  if [ $exclude_function_call -eq 1 ]; then
+    local func_call_pattern="return\|\.\|\->"
+    pattern_to_process="$pattern_to_process --and --not -e \"$func_call_pattern\""
+  fi 
 
   ### this exclude does not work, need investigate......
   if [ $remove_declaration -eq 1 ]; then
@@ -1147,7 +1156,7 @@ function fc() {  #find call
 function fdf() { #find definition of function 
   local keyword=$1
   shift 
-  fast_find_in_c_and_cpp_source $keyword "-nf" $@  
+  fast_find_in_c_and_cpp_source $keyword "-nf" "-efc" $@  
 }
 
 function fdc() {  #find definiton for class/struct...
