@@ -552,6 +552,17 @@ function fast_symbol_finder_core() {
       IFS=',' read -r $FFSE_READ_ARRAY_PARAM ignore_files_by_manual <<< "${this_param#*=}"
     elif [ "$this_param" = "-efc" ]; then ##efc - exclude function call
       exclude_function_call=1
+    elif [ "$this_param" = "-ep" ]; then #ep=exclusive pattern，手动传入的屏蔽字符串
+      eval local more_exclude_pattern=\${$((i+1))}
+      if ! [ -z $exclude_pattern  ]; then #如果已经有exclude_pattern
+        exclude_pattern="$more_exclude_pattern \| $exclude_pattern"
+      else #如果外界传入的exclude_pattern为空
+        exclude_pattern=$more_exclude_pattern
+      fi      
+      # 循环索引 i 额外 +1，跳过已读取的-ep所需要的额外参数。
+      ((i++))
+      echo "more_exclude_pattern=$more_exclude_pattern"
+      echo "exclude_pattern=$exclude_pattern"
     else
       extra_grep_param="$extra_grep_param $this_param"
     fi
@@ -835,8 +846,6 @@ function fast_find_in_c_and_cpp_source() {
   if [ "$FF3_USE_CURRENT_AS_LIST_DIR" -ne 1 ]; then
     list_file_root="${cur_path}/.."
   fi
-
-
 
   local target_list="$list_file_root/$FF3_SRC_LIST"
   local ignore_list="$list_file_root/$FF3_IGNORE_LIST"
@@ -1286,6 +1295,9 @@ function ftodo() {
   echo -e "               we can bridge two calls of ffse simply by pipe \"|\" \n"
 }
 
+
+#fast_find_in_c_and_cpp_source 可以加"-ep"参数，添加额外的exclusive pattern
+#用于过滤不要的字符串
 alias fs=fast_find_in_c_and_cpp_source
 alias fh=fast_find_in_header
 alias fg=fast_find_in_gn
