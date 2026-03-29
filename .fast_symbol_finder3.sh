@@ -690,8 +690,8 @@ function fast_symbol_finder_core() {
   ### common info and debug info
   if ! [ "$plain_text" -eq 1 ] && ! [ $clean_show -eq 1 ]; then
     echo " "  #to add one-more line between result and extrainfo
-    eval echo "include_key: $'\x1b[93m\x1b[K'$include_key$'\x1b[m'"
-    eval echo "exclude_pattern: $'\x1b[01;31m\x1b[K'$exclude_note$'\x1b[m'"
+    printf "include_key: \x1b[93m%s\x1b[m\n" "$include_key"
+    printf "exclude_pattern: \x1b[01;31m%s\x1b[m\n" "$exclude_note"
   fi
 
   if [ $is_debug -eq 1 ];then
