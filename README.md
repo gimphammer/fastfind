@@ -20,9 +20,9 @@ It works under:
 - git-bash shell on Windows 
 - zsh on Mac.
 
-Maybe it can fit other shell-env, but not test is performed
+Maybe it can fit other shell-env, but no test is performed
 
-The idea of this tools comes from the terrible experience in using vs-code on WebRTC source code. There is no symbol colorful highlight, and no category in search result in vs-code. There are always so many results when search, so that you need to take too much time to find the focus you really care about.  And also on Mac, the IntelliSense and C++ extension does not work well as you expect, the performance on Mac can not be endured. 
+The idea of this tool comes from the terrible experience in using vs-code on WebRTC source code. There is no symbol colorful highlight, and no category in search result in vs-code. There are always so many results when search, so that you need to take too much time to find the focus you really care about.  And also on Mac, the IntelliSense and C++ extension does not work well as you expect, the performance on Mac can not be endured. 
 
 This tool is designed to show respect to the visual assist which is the powerful extension of visual studio for C++ on Windows.
 
@@ -71,6 +71,8 @@ ffse-init
 - fdd [class-name] -- find all the class derived from the class named by [class-name], 
 
 - fdc [class-name] -- find who is the father class for  [class-name]
+
+- fdf [function-name] -- find the definition of function
 
 - ff [symbol]  [file-in-relative-path] -- find all the symbol named by [symbol] in the [file-in-relative-path] 
 
