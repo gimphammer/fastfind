@@ -623,7 +623,7 @@ function fast_symbol_finder_core() {
     pattern_to_process="$pattern_to_process -e \"$include_key\""
   else
     #this is default:exactly match
-    #but don't use "-w", because "-w" will affter the exclude "$include_key::"
+    #but don't use "-w", because "-w" will after the exclude "$include_key::"
     #according to git-grep rules...
     pattern_to_process="$pattern_to_process -e \"\b$include_key\b\""
   fi
@@ -694,20 +694,25 @@ function fast_symbol_finder_core() {
     printf "exclude_pattern: \x1b[01;31m%s\x1b[m\n" "$exclude_note"
   fi
 
-  if [ $is_debug -eq 1 ];then
+  if [ $is_debug -eq 1 ]; then
     echo " "
     echo "-----------========================== debug info ============================--------"
     echo "has_ignore_list : $has_ignore_list"
     echo "branch_id       : $dbg_branch_id"
-    echo "need_to_exclude : $need_to_exclude"
-    # if [ $need_to_exclude -eq 1 ];then
-      echo "    comments_key : $comments_key"
-      echo "    remove_log   : $remove_log"
-      echo "    remove_declaration : $remove_declaration"      
-      echo "    FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG : $FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG"
-      echo "    FF3_EXCLUSIVE_PATTERN_FOR_DECLARATION: $FF3_EXCLUSIVE_PATTERN_FOR_DECLARATION"
-      echo "    exclude_cmd : $exclude_cmd"
-    # fi
+    echo "parameters :"
+    echo "    comments_key : $comments_key"
+    echo "    partial_match: $partial_match"
+    echo "    remove_log   : $remove_log"
+    echo "    remove_declaration : $remove_declaration"      
+    echo "    rm_domain_symbol_with_match: $rm_domain_symbol_with_matchs"
+    echo "    exclude_forward_declaration: $exclude_forward_declaration"
+    echo "    exclude_function_call: $exclude_function_call"
+    echo "    exclude_pattern: $exclude_pattern"
+    echo "    final pattern_to_process: $pattern_to_process"
+    echo "    exclude_note: $exclude_note" 
+    echo "    FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG : $FF3_EXCLUSIVE_PATTERN_FOR_WEBRTC_LOG"
+    echo "    FF3_EXCLUSIVE_PATTERN_FOR_DECLARATION: $FF3_EXCLUSIVE_PATTERN_FOR_DECLARATION"
+    echo "    exclude_cmd : $exclude_cmd"
     echo " "
     cat -v <<< "main_command : $dbg_cmd_recoder"
     echo ""
